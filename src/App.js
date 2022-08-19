@@ -1,6 +1,17 @@
+import { Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+
 function App() {
   return (
-    <div>Hello there</div>
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/new-meetup">
+        <Login />
+      </Route>
+    </Switch>
   );
 }
 
