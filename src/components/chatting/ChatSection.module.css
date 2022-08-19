@@ -5,8 +5,22 @@
     min-height: 500px;
     border-radius: 4px;
     float: left;
-
+    position: relative;
     -webkit-box-shadow:inset 0px 0px 0px 1px rgb(79, 79, 79);
     -moz-box-shadow:inset 0px 0px 0px 1px rgb(79, 79, 79);
     box-shadow:inset 0px 0px 0px 1px rgb(79, 79, 79);
+}
+
+.form {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.input {
+    /* height: 30px; */
+    border: 0px solid #ccc;  display: block;
+    font: inherit;
+    border: 1px solid #ccc;
+    width: 100%;
 }
