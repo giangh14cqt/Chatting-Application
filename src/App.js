@@ -1,17 +1,24 @@
 import { Route, Switch } from "react-router-dom";
+import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
-    <Switch>
-      <Route path="/" exact>
-        <Home />
-      </Route>
-      <Route path="/new-meetup">
-        <Login />
-      </Route>
-    </Switch>
+    <Layout>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="*">
+          <NoPage />
+        </Route>
+      </Switch>
+    </Layout>
   );
 }
 
