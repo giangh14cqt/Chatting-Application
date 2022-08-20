@@ -6,6 +6,8 @@ import NoPage from "./pages/NoPage";
 import Chat from "./pages/Chat";
 
 function App() {
+  localStorage.setItem("userId", "1");
+  // localStorage.setItem("activeChat", false);
   return (
     <Layout>
       <Switch>
@@ -16,7 +18,10 @@ function App() {
           <Login />
         </Route>
         <Route path="/chat">
-          <Chat />
+          <Chat/>
+        </Route>
+        <Route path="/chat/">
+          <Chat/>
         </Route>
         <Route path="*">
           <NoPage />

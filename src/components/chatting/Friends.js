@@ -1,32 +1,29 @@
 import classes from "./Friends.module.css";
 import { Link } from "react-router-dom";
+import { friends } from "../../utils/data/friends";
+import { useContext } from "react";
+import ScreenStatusContex from "../../store/ScreenStatusContex";
 
 function Friends() {
-  var friends = [
-    {
-      id: 1,
-      name: "John",
-      avatar:
-        "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
-    },
-    {
-      id: 2,
-      name: "Mary",
-      avatar:
-        "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
-    },
-  ];
+  const statusCtx = useContext(ScreenStatusContex);
   return (
     <div className={classes.header}>
       <div className={classes.block}>
         {friends.map((friend) => (
-          <div className={classes.card}>
+          <div className={classes.card} key={friend.id}>
             <img
               className={classes.img}
               src={friend.avatar}
               alt={friend.name}
             />
-            <Link to={"/chat/" + friend.id}>{friend.name}</Link>
+            <Link
+              to={"/chat/" + friend.id}
+              onClick={() => {
+                statusCtx.setScreenStatus(true, friend.id);
+              }}
+            >
+              {friend.name}
+            </Link>
             {/* <div className={classes.name}>{friend.name}</div> */}
           </div>
         ))}
