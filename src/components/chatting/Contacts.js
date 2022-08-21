@@ -1,5 +1,5 @@
 import classes from "./Contacts.module.css";
-import Friends from "./Friends";
+import Friends from "./contactsection/Friends";
 
 function Contacts() {
   return (

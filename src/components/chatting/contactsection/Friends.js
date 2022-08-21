@@ -1,8 +1,8 @@
 import classes from "./Friends.module.css";
 import { Link } from "react-router-dom";
-import { friends } from "../../utils/data/friends";
+import { friends } from "../../../utils/data/friends";
 import { useContext } from "react";
-import ScreenStatusContex from "../../store/ScreenStatusContex";
+import ScreenStatusContex from "../../../store/ScreenStatusContex";
 
 function Friends() {
   const statusCtx = useContext(ScreenStatusContex);
