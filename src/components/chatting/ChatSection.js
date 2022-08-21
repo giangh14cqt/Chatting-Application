@@ -17,7 +17,7 @@ function ChatSection() {
 
       <Messages userId={userId} parnerId={parnerId} />
 
-      <SendingMessages parnerId={parnerId} />
+      <SendingMessages parnerId={parnerId} userId={userId}/>
     </div>
   );
 }

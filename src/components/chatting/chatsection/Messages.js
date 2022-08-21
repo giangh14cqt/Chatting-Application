@@ -1,11 +1,13 @@
 import classes from "./Messages.module.css";
-import { messages } from "../../../utils/data/messages";
+import { useContext } from "react";
+import ScreenStatusContex from "../../../store/ScreenStatusContex";
 
 function Messages(props) {
+  const statusCtx = useContext(ScreenStatusContex);
   return (
     <header className={classes.header}>
       <nav>
-        {messages.map((message) => (
+        {statusCtx.messages.map((message) => (
           <div className={classes.block} key={message.id}>
             <li
               className={
